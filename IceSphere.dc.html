@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>@keyframes ibPulse{0%,100%{opacity:.5;transform:scale(.93)}50%{opacity:1;transform:scale(1.05)}}</style>
+</helmet>
+<div style="position:relative;width:100%;aspect-ratio:1/1;">
+  {{ halo }}
+  <svg viewBox="0 0 200 200" role="img" aria-label="{{ ariaLabel }}" style="position:relative;display:block;width:100%;height:100%;overflow:visible;">
+    <defs>
+      <radialGradient id="{{ g.glass }}" cx="38%" cy="30%" r="75%">
+        <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.32"></stop>
+        <stop offset="0.38" stop-color="#CFE6F7" stop-opacity="0.10"></stop>
+        <stop offset="0.78" stop-color="#7FA8CC" stop-opacity="0.07"></stop>
+        <stop offset="1" stop-color="#D5E8F7" stop-opacity="0.42"></stop>
+      </radialGradient>
+      <radialGradient id="{{ g.core }}" cx="36%" cy="30%" r="80%">
+        <stop offset="0" stop-color="#A9B3BF"></stop>
+        <stop offset="0.3" stop-color="#5B6470"></stop>
+        <stop offset="0.7" stop-color="#222830"></stop>
+        <stop offset="1" stop-color="#0D1015"></stop>
+      </radialGradient>
+      <linearGradient id="{{ g.band }}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#5E666F"></stop>
+        <stop offset="0.3" stop-color="#F2F5F8"></stop>
+        <stop offset="0.55" stop-color="#B4BCC5"></stop>
+        <stop offset="1" stop-color="#3E444B"></stop>
+      </linearGradient>
+      <linearGradient id="{{ g.tint }}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="{{ glow }}" stop-opacity="0.10"></stop>
+        <stop offset="0.48" stop-color="{{ glow }}" stop-opacity="0.42"></stop>
+        <stop offset="0.53" stop-color="{{ glow }}" stop-opacity="0"></stop>
+      </linearGradient>
+      <radialGradient id="{{ g.hl }}" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"></stop>
+        <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop>
+      </radialGradient>
+      <clipPath id="{{ g.clip }}"><circle cx="100" cy="100" r="92"></circle></clipPath>
+      <path id="{{ g.tp }}" d="M40,117 Q100,125 160,117" fill="none"></path>
+    </defs>
+    <circle cx="100" cy="100" r="92" fill="url(#{{ g.glass }})"></circle>
+    <circle cx="100" cy="100" r="92" fill="url(#{{ g.tint }})"></circle>
+    <circle cx="100" cy="104" r="68" fill="url(#{{ g.core }})"></circle>
+    <g clip-path="url(#{{ g.clip }})">
+      <path d="M0,92 Q100,114 200,92" fill="none" stroke="{{ glow }}" stroke-width="7" stroke-opacity="0.35"></path>
+      <path d="M0,92 Q100,114 200,92" fill="none" stroke="{{ glow }}" stroke-width="2"></path>
+      <path d="M0,94 Q100,116 200,94 L200,118 Q100,140 0,118 Z" fill="url(#{{ g.band }})"></path>
+    </g>
+    <sc-if value="{{ showLabel }}" hint-placeholder-val="{{ true }}">
+      <text x="100" y="125" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="3.5" fill="#2B3139" >ICEBALL</text>
+    </sc-if>
+    <circle cx="100" cy="100" r="91.4" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.2"></circle>
+    <path d="M35,165 A92,92 0 0 0 165,165" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"></path>
+    <ellipse cx="64" cy="50" rx="30" ry="15" transform="rotate(-32 64 50)" fill="url(#{{ g.hl }})" opacity="0.65"></ellipse>
+    <circle cx="146" cy="58" r="4" fill="#FFFFFF" opacity="0.5"></circle>
+  </svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:320,&quot;height&quot;:320},&quot;glow&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#7FC8F8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#7FC8F8&quot;,&quot;#A06BF0&quot;,&quot;#E5484D&quot;]},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;ICEBALL&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pulse&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;delay&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:0,&quot;max&quot;:5,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;s&quot;},&quot;ariaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Ilustración de la esfera ICEBALL&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  uid = 'ib' + Math.random().toString(36).slice(2, 8);
+  renderVals() {
+    const glow = this.props.glow ?? '#7FC8F8';
+    const label = this.props.label ?? 'ICEBALL';
+    const pulse = this.props.pulse ?? false;
+    const delay = this.props.delay ?? 0;
+    const u = this.uid;
+    return {
+      glow, label, showLabel: label !== '',
+      ariaLabel: this.props.altText ?? this.props.ariaLabel ?? 'Ilustración de la esfera ICEBALL',
+      g: { glass: u + 'g', core: u + 'c', band: u + 'b', tint: u + 't', hl: u + 'h', clip: u + 'k', tp: u + 'p' },
+      halo: React.createElement('div', {
+        'aria-hidden': true,
+        style: {
+          position: 'absolute', inset: '-18%', borderRadius: '50%', pointerEvents: 'none',
+          background: `radial-gradient(circle, ${glow}59 0%, ${glow}1f 38%, transparent 66%)`,
+          animation: pulse ? `ibPulse 3.6s ease-in-out ${delay}s infinite` : 'none',
+        },
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>
