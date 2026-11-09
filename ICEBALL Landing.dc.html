@@ -31,6 +31,7 @@ body{margin:0;overflow-x:hidden;background:#0A0F1C;color:#E8EEF5;font-family:'Ou
 a{color:#7FC8F8;text-decoration:none}
 a:hover{color:#B9E1FB}
 img{display:block;max-width:100%}
+@keyframes ibGlow{0%,100%{box-shadow:0 0 0 6px #0A0F1C,0 0 14px rgba(127,200,248,0.55)}50%{box-shadow:0 0 0 6px #0A0F1C,0 0 30px rgba(127,200,248,1)}}
 @keyframes ibPulse{0%,100%{opacity:.5;transform:scale(.93)}50%{opacity:1;transform:scale(1.05)}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
@@ -43,6 +44,7 @@ img{display:block;max-width:100%}
       <span style="font-size:8px;letter-spacing:0.55em;color:#AFC0D3;margin-top:4px;">BEYOND ICE</span>
     </a>
     <nav aria-label="Secciones" style="flex:1 1 320px;min-width:0;display:flex;gap:4px;overflow-x:auto;justify-content:flex-end;scrollbar-width:none;">
+      <a href="#historia" style="flex:none;padding:8px 10px;font-size:14px;color:#C9D5E3;border-radius:8px;" style-hover="color:#FFFFFF;background:rgba(127,200,248,0.08);">Historia</a>
       <a href="#producto" style="flex:none;padding:8px 10px;font-size:14px;color:#C9D5E3;border-radius:8px;" style-hover="color:#FFFFFF;background:rgba(127,200,248,0.08);">Producto</a>
       <a href="#publico" style="flex:none;padding:8px 10px;font-size:14px;color:#C9D5E3;border-radius:8px;" style-hover="color:#FFFFFF;background:rgba(127,200,248,0.08);">Público</a>
       <a href="#valor" style="flex:none;padding:8px 10px;font-size:14px;color:#C9D5E3;border-radius:8px;" style-hover="color:#FFFFFF;background:rgba(127,200,248,0.08);">Valor</a>
@@ -127,6 +129,76 @@ img{display:block;max-width:100%}
   </sc-if>
 </section>
 
+<section id="historia" data-screen-label="Nuestra historia" style="scroll-margin-top:64px;padding:clamp(72px,10vw,128px) clamp(20px,5vw,48px);border-top:1px solid rgba(160,195,230,0.08);background:radial-gradient(ellipse 50% 40% at 85% 20%,rgba(58,141,222,0.1),transparent 70%),#0A0F1C;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,7vw,80px);">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;max-width:720px;">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.3em;color:#7FC8F8;">NUESTRA HISTORIA</span>
+      <h2 style="margin:0;font-size:clamp(32px,4.6vw,52px);font-weight:600;line-height:1.08;color:#FFFFFF;text-wrap:balance;">¿Cómo nació ICEBALL?</h2>
+      <p style="margin:0;font-size:17px;line-height:1.7;color:#AFC0D3;text-wrap:pretty;">De una tarde entre amigos a un proyecto con propósito.</p>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:clamp(56px,8vw,96px);">
+      <span aria-hidden="true" style="position:absolute;left:15px;top:12px;bottom:12px;width:2px;border-radius:2px;background:linear-gradient(180deg,rgba(127,200,248,0.9),rgba(127,200,248,0.25));"></span>
+      <li data-reveal="" style="position:relative;padding-left:clamp(44px,6vw,64px);">
+        <span aria-hidden="true" style="position:absolute;left:6px;top:6px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,#E6F5FF 0%,#7FC8F8 45%,#3A8DDE 100%);box-shadow:0 0 0 6px #0A0F1C,0 0 22px rgba(127,200,248,0.85);animation:ibGlow 2.8s ease-in-out infinite;"></span>
+        <div style="display:grid;grid-template-columns:{{ histCols }};gap:clamp(24px,4vw,56px);align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:14px;min-width:0;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.3em;color:#7FC8F8;">MOMENTO 1</span>
+            <h3 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.2;color:#FFFFFF;text-wrap:balance;">Una tarde después de clases</h3>
+            <p style="margin:0;font-size:17px;line-height:1.7;color:#AFC0D3;text-wrap:pretty;">ICEBALL nació de una experiencia cotidiana. Un día, al salir de la universidad, fuimos a un bar a tomar unas gaseosas mientras jugábamos bolirrana. Pedimos las bebidas con un vaso con hielo para mantenerlas frías, pero, como nos levantábamos todo el tiempo a jugar, el hielo se derretía poco a poco, se mezclaba con la gaseosa y alteraba su sabor. Al final terminábamos dejando gran parte de la bebida.</p>
+          </div>
+          <div style="min-width:0;"><figure style="margin:0;display:flex;flex-direction:column;gap:12px;max-width:520px;width:100%;">
+            <div style="position:relative;aspect-ratio:10/9;">
+              <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(160,195,230,0.18);background:#0C1322;aspect-ratio:1/1;box-shadow:0 24px 60px -24px rgba(0,0,0,0.8);position:absolute;left:0;top:0;width:64%;transform:rotate(-2deg);"><img src="public/images/historia-1.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="El equipo jugando bolirrana en el bar, con un letrero de neón al fondo" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;"></div>
+              <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(160,195,230,0.18);background:#0C1322;aspect-ratio:1/1;box-shadow:0 24px 60px -24px rgba(0,0,0,0.8);position:absolute;right:0;bottom:0;width:60%;transform:rotate(2.5deg);border-color:rgba(127,200,248,0.4);"><img src="public/images/historia-2.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Integrante del equipo apuntando con el taco mientras sus compañeros miran con sus gaseosas" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;"></div>
+            </div>
+            <figcaption style="margin:0;font-size:13px;line-height:1.5;color:#AFC0D3;">Fotografías del equipo</figcaption>
+          </figure></div>
+        </div>
+      </li>
+      <li data-reveal="" style="position:relative;padding-left:clamp(44px,6vw,64px);">
+        <span aria-hidden="true" style="position:absolute;left:6px;top:6px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,#E6F5FF 0%,#7FC8F8 45%,#3A8DDE 100%);box-shadow:0 0 0 6px #0A0F1C,0 0 22px rgba(127,200,248,0.85);animation:ibGlow 2.8s ease-in-out infinite;"></span>
+        <div style="display:grid;grid-template-columns:{{ histCols }};gap:clamp(24px,4vw,56px);align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:14px;min-width:0;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.3em;color:#7FC8F8;">MOMENTO 2</span>
+            <h3 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.2;color:#FFFFFF;text-wrap:balance;">Una pregunta en clase</h3>
+            <p style="margin:0;font-size:17px;line-height:1.7;color:#AFC0D3;text-wrap:pretty;">Tiempo después, en la clase de Administración, nos propusieron desarrollar un proyecto integrador basado en una idea innovadora. Fue entonces cuando Juan planteó crear una solución para mantener las bebidas frías sin modificar su sabor.</p>
+          </div>
+          <div style="min-width:0;order:{{ histOrd }};"><div style="position:relative;max-width:520px;width:100%;padding:clamp(28px,4vw,44px);border-radius:22px;border:1px solid rgba(185,225,251,0.22);background:linear-gradient(150deg,rgba(255,255,255,0.09),rgba(127,200,248,0.04));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 24px 60px -24px rgba(0,0,0,0.8);display:flex;flex-direction:column;gap:22px;">
+            <div style="display:flex;gap:14px;"><svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6a13 13 0 0 0-7.6 23.5c1.6 1.2 2.6 3 2.6 5V36h10v-1.5c0-2 1-3.8 2.6-5A13 13 0 0 0 24 6z"></path><path d="M19 41h10M21 45h6"></path><path d="M24 14v6M20 18h8" stroke="#7FC8F8"></path></svg><svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c6 8 12 15 12 22a12 12 0 0 1-24 0c0-7 6-14 12-22z"></path><path d="M8 8l32 32" stroke="#FF8A8A" stroke-width="2.6"></path></svg></div>
+            <p style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:500;line-height:1.3;color:#FFFFFF;text-wrap:balance;">¿Y si una bebida pudiera mantenerse fría sin cambiar su sabor?</p>
+          </div></div>
+        </div>
+      </li>
+      <li data-reveal="" style="position:relative;padding-left:clamp(44px,6vw,64px);">
+        <span aria-hidden="true" style="position:absolute;left:6px;top:6px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,#E6F5FF 0%,#7FC8F8 45%,#3A8DDE 100%);box-shadow:0 0 0 6px #0A0F1C,0 0 22px rgba(127,200,248,0.85);animation:ibGlow 2.8s ease-in-out infinite;"></span>
+        <div style="display:grid;grid-template-columns:{{ histCols }};gap:clamp(24px,4vw,56px);align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:14px;min-width:0;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.3em;color:#7FC8F8;">MOMENTO 3</span>
+            <h3 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.2;color:#FFFFFF;text-wrap:balance;">La inspiración</h3>
+            <p style="margin:0;font-size:17px;line-height:1.7;color:#AFC0D3;text-wrap:pretty;">Exploramos diferentes alternativas y encontramos inspiración en las piedras enfriadoras de whisky, que conservan la temperatura de la bebida sin diluirla. A partir de ahí empezamos a desarrollar nuestro propio concepto: una propuesta diferente, funcional y atractiva.</p>
+          </div>
+          <div style="min-width:0;"><figure style="margin:0;display:flex;flex-direction:column;gap:12px;max-width:520px;width:100%;"><div style="border-radius:18px;overflow:hidden;border:1px solid rgba(160,195,230,0.18);background:#0C1322;aspect-ratio:1/1;box-shadow:0 24px 60px -24px rgba(0,0,0,0.8);"><img src="public/images/historia-3.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="El equipo brindando con gaseosas, cada vaso con una esfera ICEBALL" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;"></div><figcaption style="margin:0;font-size:13px;line-height:1.5;color:#AFC0D3;">Fotografía del equipo editada con IA para mostrar cómo se vería ICEBALL</figcaption></figure></div>
+        </div>
+      </li>
+      <li data-reveal="" style="position:relative;padding-left:clamp(44px,6vw,64px);">
+        <span aria-hidden="true" style="position:absolute;left:6px;top:6px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,#E6F5FF 0%,#7FC8F8 45%,#3A8DDE 100%);box-shadow:0 0 0 6px #0A0F1C,0 0 22px rgba(127,200,248,0.85);animation:ibGlow 2.8s ease-in-out infinite;"></span>
+        <div style="display:grid;grid-template-columns:{{ histCols }};gap:clamp(24px,4vw,56px);align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:14px;min-width:0;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.3em;color:#7FC8F8;">MOMENTO 4</span>
+            <h3 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.2;color:#FFFFFF;text-wrap:balance;">Nace ICEBALL</h3>
+            <p style="margin:0;font-size:17px;line-height:1.7;color:#AFC0D3;text-wrap:pretty;">Así nació ICEBALL: una idea que surgió de un momento sencillo entre amigos y que se convirtió en un proyecto con un propósito claro: disfrutar cada bebida fría, conservando su sabor original.</p>
+          </div>
+          <div style="min-width:0;order:{{ histOrd }};"><figure style="margin:0;display:flex;flex-direction:column;gap:12px;max-width:520px;width:100%;"><div style="border-radius:18px;overflow:hidden;border:1px solid rgba(160,195,230,0.18);background:#0C1322;aspect-ratio:1/1;box-shadow:0 24px 60px -24px rgba(0,0,0,0.8);"><img src="public/images/historia-4.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="El equipo tomando de vasos con esferas ICEBALL, con el letrero luminoso de ICEBALL al fondo" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;"></div><figcaption style="margin:0;font-size:13px;line-height:1.5;color:#AFC0D3;">Fotografía del equipo editada con IA. ICEBALL aún es un prototipo en desarrollo.</figcaption></figure></div>
+        </div>
+      </li>
+    </ol>
+    <blockquote data-reveal="" style="margin:0 auto;max-width:900px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;">
+      <p style="margin:0;font-size:clamp(24px,3.6vw,40px);font-weight:500;line-height:1.3;color:#FFFFFF;text-wrap:balance;"><span style="color:#7FC8F8;">“</span>Creemos que los pequeños inconvenientes pueden convertirse en grandes ideas, y que disfrutar una bebida debería ser siempre una experiencia llena de sabor.<span style="color:#7FC8F8;">”</span></p>
+      <footer style="font-size:14px;letter-spacing:0.04em;color:#AFC0D3;">— Andrés, Juan, Juana y Luis · Equipo ICEBALL</footer>
+    </blockquote>
+  </div>
+</section>
+
 <section id="producto" data-screen-label="02 Producto" style="scroll-margin-top:64px;padding:clamp(72px,10vw,128px) clamp(20px,5vw,48px);border-top:1px solid rgba(160,195,230,0.08);">
   <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,8vw,96px);">
     <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:end;">
@@ -205,6 +277,33 @@ img{display:block;max-width:100%}
         </div>
         <ol style="list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(160,195,230,0.14);"><li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(160,195,230,0.14);"><span style="flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:#FFFFFF;">1</span><div style="flex:1;min-width:0;"><p style="margin:0;font-size:18px;font-weight:500;color:#FFFFFF;">Indicador de temperatura</p><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#AFC0D3;">Cambia de color según la temperatura.</p></div></li><li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(160,195,230,0.14);"><span style="flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:#FFFFFF;">2</span><div style="flex:1;min-width:0;"><p style="margin:0;font-size:18px;font-weight:500;color:#FFFFFF;">Núcleo refrigerante</p><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#AFC0D3;">Mantiene la bebida fría por más tiempo.</p></div></li><li style="display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(160,195,230,0.14);"><span style="flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:#FFFFFF;">3</span><div style="flex:1;min-width:0;"><p style="margin:0;font-size:18px;font-weight:500;color:#FFFFFF;">Carcasa de silicona</p><p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:#AFC0D3;">Grado alimenticio, resistente y duradera.</p></div></li></ol>
       </sc-if>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <h3 data-reveal="" style="margin:0;font-size:clamp(22px,2.6vw,28px);font-weight:500;color:#FFFFFF;">Así se ensambla ICEBALL</h3>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;">
+        <li data-reveal="" data-reveal-delay="0" style="display:flex;flex-direction:column;gap:16px;padding:16px;border-radius:22px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));min-width:0;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);box-shadow:0 0 16px rgba(127,200,248,0.45);">1</span><span aria-hidden="true" style="flex:1;height:0;border-top:2px dotted rgba(127,200,248,0.7);margin-right:-34px;"></span></div>
+          <div style="aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#05080F;"><img src="public/images/ensamble-1-piezas.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Las tres piezas de ICEBALL separadas sobre una superficie de piedra" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;"></div>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Las tres piezas: carcasa inferior, núcleo refrigerante y carcasa superior con indicador.</p>
+        </li>
+        <li data-reveal="" data-reveal-delay="300" style="display:flex;flex-direction:column;gap:16px;padding:16px;border-radius:22px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));min-width:0;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);box-shadow:0 0 16px rgba(127,200,248,0.45);">2</span><span aria-hidden="true" style="flex:1;height:0;border-top:2px dotted rgba(127,200,248,0.7);margin-right:-34px;"></span></div>
+          <div style="aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#05080F;"><img src="public/images/ensamble-2-nucleo.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Manos con guantes colocando el núcleo oscuro dentro de la carcasa inferior transparente" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;"></div>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">El núcleo refrigerante se ubica dentro de la carcasa inferior.</p>
+        </li>
+        <li data-reveal="" data-reveal-delay="600" style="display:flex;flex-direction:column;gap:16px;padding:16px;border-radius:22px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));min-width:0;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);box-shadow:0 0 16px rgba(127,200,248,0.45);">3</span><span aria-hidden="true" style="flex:1;height:0;border-top:2px dotted rgba(127,200,248,0.7);margin-right:-34px;"></span></div>
+          <div style="aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#05080F;"><img src="public/images/ensamble-3-cierre.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Manos con guantes cerrando la esfera con la banda plateada ICEBALL alineada" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;"></div>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">La carcasa superior se cierra con un giro y la banda plateada queda alineada.</p>
+        </li>
+        <li data-reveal="" data-reveal-delay="900" style="display:flex;flex-direction:column;gap:16px;padding:16px;border-radius:22px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));min-width:0;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);box-shadow:0 0 16px rgba(127,200,248,0.45);">4</span></div>
+          <div style="aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#05080F;"><img src="public/images/ensamble-4-lista.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Esfera ICEBALL cerrada y sellada con su brillo azul" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;"></div>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">La esfera queda sellada y lista para congelar.</p>
+        </li>
+      </ol>
+      <p data-reveal="" style="margin:0;font-size:14px;line-height:1.55;color:#AFC0D3;">Ensamble conceptual: el sistema de cierre y sellado se definirá y probará en el prototipo.</p>
     </div>
 
     <div data-reveal="" style="padding:clamp(24px,4vw,44px);border-radius:22px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));display:flex;flex-direction:column;gap:28px;">
@@ -302,6 +401,7 @@ img{display:block;max-width:100%}
       </article>
       <article data-reveal="" style="padding:28px;border-radius:20px;border:1px solid rgba(127,200,248,0.4);background:linear-gradient(160deg,rgba(127,200,248,0.14),rgba(58,141,222,0.05));display:flex;flex-direction:column;gap:16px;">
         <span style="align-self:flex-start;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.16em;color:#0A0F1C;background:#7FC8F8;">MERCADO OBJETIVO</span>
+        <div style="display:flex;align-items:center;gap:12px;" aria-label="De Colombia a Estados Unidos"><span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Colombia" style="display:block;"><rect width="36" height="12" fill="#FCD116"></rect><rect y="12" width="36" height="6" fill="#003893"></rect><rect y="18" width="36" height="6" fill="#CE1126"></rect></svg></span><svg viewBox="0 0 40 16" width="40" height="16" aria-hidden="true" fill="none" stroke="#7FC8F8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h34M29 2l7 6-7 6"></path></svg><span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Estados Unidos" style="display:block;"><rect width="36" height="24" fill="#FFFFFF"></rect><rect y="0.000" width="36" height="1.846" fill="#B22234"></rect><rect y="3.692" width="36" height="1.846" fill="#B22234"></rect><rect y="7.385" width="36" height="1.846" fill="#B22234"></rect><rect y="11.077" width="36" height="1.846" fill="#B22234"></rect><rect y="14.769" width="36" height="1.846" fill="#B22234"></rect><rect y="18.462" width="36" height="1.846" fill="#B22234"></rect><rect y="22.154" width="36" height="1.846" fill="#B22234"></rect><rect width="14.4" height="12.92" fill="#3C3B6E"></rect><circle cx="1.30" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="11.70" r="0.55" fill="#FFFFFF"></circle></svg></span></div>
         <h3 style="margin:0;font-size:20px;font-weight:500;line-height:1.3;color:#FFFFFF;">Exportación a Estados Unidos</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#C9D5E3;">Bares, gastrobares y restaurantes premium.</p>
       </article>
@@ -425,20 +525,80 @@ img{display:block;max-width:100%}
       </div>
       <p style="margin:0;font-size:13px;color:#FFD9A8;">Modelo preliminar: los márgenes dependen de validar los costos reales de fabricación y envío.</p>
     </div>
-    <div data-reveal="" style="border-radius:22px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#0C1322;display:flex;flex-direction:column;">
-      <div style="position:relative;">
-        <img src="public/images/exportacion.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Cajas ICEBALL de cartón corrugado envueltas en film sobre un pallet de madera, con contenedores y una grúa portuaria al fondo" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 50%;">
+    <div data-reveal="" ref="{{ routeRef }}" style="position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#0C1322;isolation:isolate;">
+      <img src="public/images/exportacion.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Cajas ICEBALL de cartón corrugado envueltas en film sobre un pallet de madera, con contenedores y una grúa portuaria al fondo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:-2;">
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,15,28,0.8) 0%,rgba(10,15,28,0.9) 45%,rgba(10,15,28,0.97) 100%);"></div>
+      <div style="padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:clamp(28px,4vw,40px);">
+        <div style="display:flex;flex-direction:column;gap:10px;"><span style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#7FC8F8;">EXPORTACIÓN</span><h3 style="margin:0;font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.15;color:#FFFFFF;text-wrap:balance;">Ruta de exportación a Estados Unidos</h3></div>
         <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-          <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(315deg,rgba(10,15,28,0.94) 0%,rgba(10,15,28,0.72) 20%,rgba(10,15,28,0) 42%);"></div>
-          <p style="position:absolute;right:clamp(20px,3vw,36px);bottom:clamp(20px,3vw,32px);margin:0;max-width:min(300px,25%);text-align:right;font-size:clamp(16px,1.5vw,20px);font-weight:500;line-height:1.45;color:#FFFFFF;text-wrap:balance;">Transporte marítimo · Caja corrugada · Pallet · Destino: EE. UU.</p>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;color:#C9D5E3;"><span style="display:flex;align-items:center;gap:10px;"><span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Colombia" style="display:block;"><rect width="36" height="12" fill="#FCD116"></rect><rect y="12" width="36" height="6" fill="#003893"></rect><rect y="18" width="36" height="6" fill="#CE1126"></rect></svg></span>Colombia</span><span style="display:flex;align-items:center;gap:10px;">Estados Unidos<span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Estados Unidos" style="display:block;"><rect width="36" height="24" fill="#FFFFFF"></rect><rect y="0.000" width="36" height="1.846" fill="#B22234"></rect><rect y="3.692" width="36" height="1.846" fill="#B22234"></rect><rect y="7.385" width="36" height="1.846" fill="#B22234"></rect><rect y="11.077" width="36" height="1.846" fill="#B22234"></rect><rect y="14.769" width="36" height="1.846" fill="#B22234"></rect><rect y="18.462" width="36" height="1.846" fill="#B22234"></rect><rect y="22.154" width="36" height="1.846" fill="#B22234"></rect><rect width="14.4" height="12.92" fill="#3C3B6E"></rect><circle cx="1.30" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="11.70" r="0.55" fill="#FFFFFF"></circle></svg></span></span></div>
+            <div style="position:relative;height:2px;margin:10px 0;border-top:2px dashed rgba(127,200,248,0.65);">
+              <span aria-hidden="true" style="position:absolute;left:calc(10% - 6px);top:-7px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span><span aria-hidden="true" style="position:absolute;left:calc(30% - 6px);top:-7px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span><span aria-hidden="true" style="position:absolute;left:calc(50% - 6px);top:-7px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span><span aria-hidden="true" style="position:absolute;left:calc(70% - 6px);top:-7px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span><span aria-hidden="true" style="position:absolute;left:calc(90% - 6px);top:-7px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span>
+              <span aria-hidden="true" style="position:absolute;{{ shipPos }}width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#0A0F1C;border:1px solid rgba(127,200,248,0.7);box-shadow:0 0 18px rgba(127,200,248,0.6);z-index:2;transition:{{ shipTrans }};"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#E6F5FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 28h36l-5 9H11z"></path><path d="M12 28V19h24v9"></path><path d="M21 19v-7h6v7"></path></svg></span>
+            </div>
+          </div>
         </sc-if>
-      </div>
-      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-        <p style="margin:0;padding:16px clamp(20px,4vw,32px);font-size:16px;font-weight:500;line-height:1.5;color:#FFFFFF;background:linear-gradient(180deg,#101A2E,#0C1322);border-bottom:1px solid rgba(160,195,230,0.12);">Transporte marítimo · Caja corrugada · Pallet · Destino: EE. UU.</p>
-      </sc-if>
-      <div style="padding:clamp(22px,4vw,36px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;">
-        <div style="display:flex;flex-direction:column;gap:10px;"><span style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#7FC8F8;">EXPORTACIÓN</span><h3 style="margin:0;font-size:clamp(22px,2.8vw,30px);font-weight:600;color:#FFFFFF;">De Colombia a Estados Unidos</h3></div>
-        <a href="#contacto" style="padding:14px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);" style-hover="color:#0A0F1C;filter:brightness(1.08);">Solicitar información</a>
+        <div style="position:relative;">
+          <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C9D5E3;padding-bottom:20px;"><span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Colombia" style="display:block;"><rect width="36" height="12" fill="#FCD116"></rect><rect y="12" width="36" height="6" fill="#003893"></rect><rect y="18" width="36" height="6" fill="#CE1126"></rect></svg></span>Colombia</div>
+          </sc-if>
+          <ol style="list-style:none;margin:0;padding:0;position:relative;display:grid;grid-template-columns:{{ routeCols }};gap:{{ routeGap }};">
+            <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+              <span aria-hidden="true" style="position:absolute;left:17px;top:0;bottom:0;border-left:2px dashed rgba(127,200,248,0.65);"></span>
+              <span aria-hidden="true" style="position:absolute;{{ shipPos }}width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#0A0F1C;border:1px solid rgba(127,200,248,0.7);box-shadow:0 0 18px rgba(127,200,248,0.6);z-index:2;transition:{{ shipTrans }};"><svg viewBox="0 0 48 48" width="22" height="22" fill="none" stroke="#E6F5FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 28h36l-5 9H11z"></path><path d="M12 28V19h24v9"></path><path d="M21 19v-7h6v7"></path></svg></span>
+            </sc-if>
+            <li style="position:relative;display:flex;flex-direction:column;align-items:{{ stopAlign }};text-align:{{ stopText }};gap:10px;padding:{{ stopPad }};min-width:0;">
+              <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:12px;top:14px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span></sc-if>
+              <span style="width:48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(185,225,251,0.25);background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 40V22l9 6v-6l9 6v-6l9 6V10h7v30z"></path><path d="M6 40h36"></path><path d="M12 34h4M20 34h4M28 34h4"></path></svg></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:#7FC8F8;">PARADA 1</span>
+              <p style="margin:0;font-size:16px;font-weight:500;line-height:1.35;color:#FFFFFF;text-wrap:balance;">Fabricación y empaque · Colombia</p>
+              <p style="margin:0;font-size:14px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Esferas empacadas en su caja, cajas de cartón corrugado y pallet de madera.</p>
+            </li>
+            <li style="position:relative;display:flex;flex-direction:column;align-items:{{ stopAlign }};text-align:{{ stopText }};gap:10px;padding:{{ stopPad }};min-width:0;">
+              <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:12px;top:14px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span></sc-if>
+              <span style="width:48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(185,225,251,0.25);background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h17l8 8v28H12z"></path><path d="M29 6v8h8"></path><path d="M17 22h14M17 28h14M17 34h9"></path></svg></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:#7FC8F8;">PARADA 2</span>
+              <p style="margin:0;font-size:16px;font-weight:500;line-height:1.35;color:#FFFFFF;text-wrap:balance;">Exportación · Puerto de Cartagena</p>
+              <p style="margin:0;font-size:14px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Declaración de exportación ante la DIAN, factura comercial, lista de empaque y certificado de origen.</p>
+            </li>
+            <li style="position:relative;display:flex;flex-direction:column;align-items:{{ stopAlign }};text-align:{{ stopText }};gap:10px;padding:{{ stopPad }};min-width:0;">
+              <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:12px;top:14px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span></sc-if>
+              <span style="width:48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(185,225,251,0.25);background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30h36l-5 9H11z"></path><path d="M12 30V20h24v10"></path><path d="M20 20v-8h8v8"></path><path d="M4 44c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2"></path></svg></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:#7FC8F8;">PARADA 3</span>
+              <p style="margin:0;font-size:16px;font-weight:500;line-height:1.35;color:#FFFFFF;text-wrap:balance;">Transporte marítimo</p>
+              <p style="margin:0;font-size:14px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Carga consolidada en contenedor (LCL), porque el volumen inicial es pequeño, con conocimiento de embarque (B/L).</p>
+            </li>
+            <li style="position:relative;display:flex;flex-direction:column;align-items:{{ stopAlign }};text-align:{{ stopText }};gap:10px;padding:{{ stopPad }};min-width:0;">
+              <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:12px;top:14px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span></sc-if>
+              <span style="width:48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(185,225,251,0.25);background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><span style="flex:none;display:inline-flex;width:30px;height:20px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Estados Unidos" style="display:block;"><rect width="36" height="24" fill="#FFFFFF"></rect><rect y="0.000" width="36" height="1.846" fill="#B22234"></rect><rect y="3.692" width="36" height="1.846" fill="#B22234"></rect><rect y="7.385" width="36" height="1.846" fill="#B22234"></rect><rect y="11.077" width="36" height="1.846" fill="#B22234"></rect><rect y="14.769" width="36" height="1.846" fill="#B22234"></rect><rect y="18.462" width="36" height="1.846" fill="#B22234"></rect><rect y="22.154" width="36" height="1.846" fill="#B22234"></rect><rect width="14.4" height="12.92" fill="#3C3B6E"></rect><circle cx="1.30" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="11.70" r="0.55" fill="#FFFFFF"></circle></svg></span></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:#7FC8F8;">PARADA 4</span>
+              <p style="margin:0;font-size:16px;font-weight:500;line-height:1.35;color:#FFFFFF;text-wrap:balance;">Llegada · Puerto de Miami</p>
+              <p style="margin:0;font-size:14px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Nacionalización ante la aduana de EE. UU. (CBP) por parte del importador, materiales aptos para contacto con alimentos según la FDA y etiquetado en inglés con “Made in Colombia”.</p>
+            </li>
+            <li style="position:relative;display:flex;flex-direction:column;align-items:{{ stopAlign }};text-align:{{ stopText }};gap:10px;padding:{{ stopPad }};min-width:0;">
+              <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:12px;top:14px;width:12px;height:12px;border-radius:50%;background:#7FC8F8;box-shadow:0 0 0 4px rgba(10,15,28,0.9),0 0 12px rgba(127,200,248,0.8);"></span></sc-if>
+              <span style="width:48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(185,225,251,0.25);background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true" fill="none" stroke="#B9E1FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 8h28L24 24z"></path><path d="M24 24v14M16 40h16"></path><circle cx="31" cy="12" r="0"></circle><path d="M30 4l-4 8"></path></svg></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:0.18em;color:#7FC8F8;">PARADA 5</span>
+              <p style="margin:0;font-size:16px;font-weight:500;line-height:1.35;color:#FFFFFF;text-wrap:balance;">Distribución</p>
+              <p style="margin:0;font-size:14px;line-height:1.55;color:#C9D5E3;text-wrap:pretty;">Bares, gastrobares y restaurantes premium en Estados Unidos.</p>
+            </li>
+          </ol>
+          <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C9D5E3;padding-top:20px;"><span style="flex:none;display:inline-flex;width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.12);"><svg viewBox="0 0 36 24" width="36" height="24" role="img" aria-label="Bandera de Estados Unidos" style="display:block;"><rect width="36" height="24" fill="#FFFFFF"></rect><rect y="0.000" width="36" height="1.846" fill="#B22234"></rect><rect y="3.692" width="36" height="1.846" fill="#B22234"></rect><rect y="7.385" width="36" height="1.846" fill="#B22234"></rect><rect y="11.077" width="36" height="1.846" fill="#B22234"></rect><rect y="14.769" width="36" height="1.846" fill="#B22234"></rect><rect y="18.462" width="36" height="1.846" fill="#B22234"></rect><rect y="22.154" width="36" height="1.846" fill="#B22234"></rect><rect width="14.4" height="12.92" fill="#3C3B6E"></rect><circle cx="1.30" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="1.30" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="3.90" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="6.50" r="0.55" fill="#FFFFFF"></circle><circle cx="2.47" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="4.82" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="7.17" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="9.52" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="11.87" cy="9.10" r="0.55" fill="#FFFFFF"></circle><circle cx="1.30" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="3.65" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="6.00" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="8.35" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="10.70" cy="11.70" r="0.55" fill="#FFFFFF"></circle><circle cx="13.05" cy="11.70" r="0.55" fill="#FFFFFF"></circle></svg></span>Estados Unidos</div>
+          </sc-if>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;">
+          <li style="padding:8px 14px;border-radius:999px;border:1px solid rgba(127,200,248,0.35);background:rgba(127,200,248,0.08);font-size:13px;line-height:1.4;color:#E8EEF5;">Incoterm propuesto: FOB Cartagena</li>
+          <li style="padding:8px 14px;border-radius:999px;border:1px solid rgba(127,200,248,0.35);background:rgba(127,200,248,0.08);font-size:13px;line-height:1.4;color:#E8EEF5;">Carga consolidada (LCL)</li>
+          <li style="padding:8px 14px;border-radius:999px;border:1px solid rgba(127,200,248,0.35);background:rgba(127,200,248,0.08);font-size:13px;line-height:1.4;color:#E8EEF5;">TLC Colombia–EE. UU.: posible preferencia arancelaria con certificado de origen</li>
+          <li style="padding:8px 14px;border-radius:999px;border:1px solid rgba(127,200,248,0.35);background:rgba(127,200,248,0.08);font-size:13px;line-height:1.4;color:#E8EEF5;">Subpartida arancelaria en revisión</li>
+          <li style="padding:8px 14px;border-radius:999px;border:1px solid rgba(127,200,248,0.35);background:rgba(127,200,248,0.08);font-size:13px;line-height:1.4;color:#E8EEF5;">Este lado arriba · Mantener seco · Frágil</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;">
+          <p style="margin:0;font-size:13px;line-height:1.5;color:#AFC0D3;">Ruta preliminar: puertos, tiempos y costos se confirmarán con un agente de carga.</p>
+          <a href="#contacto" style="padding:14px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);" style-hover="color:#0A0F1C;filter:brightness(1.08);">Solicitar información</a>
+        </div>
       </div>
     </div>
   </div>
@@ -473,7 +633,7 @@ img{display:block;max-width:100%}
         <span style="position:absolute;top:{{ tlDotTop }};left:{{ tlDotLeft }};width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-weight:600;color:#0A0F1C;background:linear-gradient(135deg,#7FC8F8,#3A8DDE);box-shadow:0 0 0 6px #0A0F1C,0 0 20px rgba(127,200,248,0.5);">3</span>
         <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:12px;font-weight:600;letter-spacing:0.24em;color:#7FC8F8;">ETAPA 3</span><h3 style="margin:0;font-size:clamp(20px,2.2vw,24px);font-weight:500;color:#FFFFFF;">Diseño actual</h3></div>
         <div style="padding:14px;border-radius:18px;border:1px solid rgba(160,195,230,0.14);background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015));display:flex;flex-direction:column;gap:12px;">
-          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:420px;aspect-ratio:1/1;min-height:0;overflow:hidden;"><button type="button" onClick="{{ g3.open }}" aria-label="Ampliar: {{ g3.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;grid-row:1 / span 2;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g3.src }}" width="{{ g3.w }}" height="{{ g3.h }}" alt="{{ g3.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g4.open }}" aria-label="Ampliar: {{ g4.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g4.src }}" width="{{ g4.w }}" height="{{ g4.h }}" alt="{{ g4.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g5.open }}" aria-label="Ampliar: {{ g5.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g5.src }}" width="{{ g5.w }}" height="{{ g5.h }}" alt="{{ g5.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button></div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:520px;aspect-ratio:3/2;min-height:0;overflow:hidden;"><button type="button" onClick="{{ g3.open }}" aria-label="Ampliar: {{ g3.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;grid-row:1 / span 2;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g3.src }}" width="{{ g3.w }}" height="{{ g3.h }}" alt="{{ g3.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g4.open }}" aria-label="Ampliar: {{ g4.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g4.src }}" width="{{ g4.w }}" height="{{ g4.h }}" alt="{{ g4.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g5.open }}" aria-label="Ampliar: {{ g5.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g5.src }}" width="{{ g5.w }}" height="{{ g5.h }}" alt="{{ g5.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g6.open }}" aria-label="Ampliar: {{ g6.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g6.src }}" width="{{ g6.w }}" height="{{ g6.h }}" alt="{{ g6.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button><button type="button" onClick="{{ g7.open }}" aria-label="Ampliar: {{ g7.title }}" style="all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(160,195,230,0.14);background:#05080F;position:relative;min-height:0;height:100%;" style-focus="outline:2px solid #7FC8F8;outline-offset:3px;"><img src="{{ g7.src }}" width="{{ g7.w }}" height="{{ g7.h }}" alt="{{ g7.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.03);"></button></div>
           <p style="margin:0;font-size:13px;color:#AFC0D3;">Diseño conceptual — propuesta preliminar</p>
         </div>
       </li>
@@ -652,10 +812,12 @@ const GALLERY = [
   ['empaque', 1122, 1402, 'Empaque', 'Caja azul noche de ICEBALL con ventana frontal que deja ver la esfera'],
   ['diseno-explosionado', 1024, 1536, 'Diagrama de partes', 'Vista explosionada de las tres partes de ICEBALL'],
   ['indicador-fria', 700, 700, 'Indicador de temperatura', 'Esfera ICEBALL con el indicador encendido en azul'],
+  ['ensamble-1-piezas', 1000, 1000, 'Las tres piezas', 'Las tres piezas de ICEBALL separadas sobre una superficie de piedra'],
+  ['ensamble-4-lista', 1000, 1000, 'Esfera lista', 'Esfera ICEBALL cerrada y sellada, lista para congelar'],
 ];
 
 class Component extends DCLogic {
-  state = { lb: -1, sent: false, vw: typeof window !== 'undefined' ? window.innerWidth : 1440, narrowParts: typeof window !== 'undefined' && window.innerWidth < 700 };
+  state = { lb: -1, sent: false, shipGo: false, vw: typeof window !== 'undefined' ? window.innerWidth : 1440, narrowParts: typeof window !== 'undefined' && window.innerWidth < 700 };
 
   rootRef = (el) => {
     if (this._rro) { this._rro.disconnect(); this._rro = null; }
@@ -665,6 +827,17 @@ class Component extends DCLogic {
       if (vw && vw !== this.state.vw) this.setState({ vw });
     });
     this._rro.observe(el);
+  };
+
+  routeRef = (el) => {
+    if (this._sio) { this._sio.disconnect(); this._sio = null; }
+    if (!el) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { this._reduce = true; if (!this.state.shipGo) this.setState({ shipGo: true }); return; }
+    this._sio = new IntersectionObserver(([en]) => {
+      if (en.isIntersecting) { setTimeout(() => this.setState({ shipGo: true }), 350); this._sio.disconnect(); }
+    }, { threshold: 0.35 });
+    this._sio.observe(el);
   };
 
   partsRef = (el) => {
@@ -698,7 +871,8 @@ class Component extends DCLogic {
       if (el.getBoundingClientRect().top < window.innerHeight) return;
       el.style.opacity = '0';
       el.style.transform = 'translateY(22px)';
-      el.style.transition = 'opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = (el.dataset.revealDelay || 0) + 'ms';
+      el.style.transition = 'opacity .8s ease ' + d + ', transform .8s cubic-bezier(.2,.7,.2,1) ' + d;
       this._io.observe(el);
     });
   }
@@ -709,6 +883,7 @@ class Component extends DCLogic {
     if (this._io) this._io.disconnect();
     if (this._ro) this._ro.disconnect();
     if (this._rro) this._rro.disconnect();
+    if (this._sio) this._sio.disconnect();
   }
 
   avail() { return GALLERY.map((g, i) => i); }
@@ -749,7 +924,17 @@ class Component extends DCLogic {
       lb: lb || {},
       lbOpen: !!lb,
       lbCount: (this.avail().indexOf(this.state.lb) + 1) + ' / ' + this.avail().length,
-      g1: gallery[0], g2: gallery[1], g3: gallery[2], g4: gallery[3], g5: gallery[4],
+      g1: gallery[0], g2: gallery[1], g3: gallery[2], g4: gallery[3], g5: gallery[4], g6: gallery[5], g7: gallery[6],
+      routeRef: this.routeRef,
+      histCols: wide ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      histOrd: wide ? '-1' : '0',
+      routeCols: wide ? 'repeat(5,minmax(0,1fr))' : 'minmax(0,1fr)',
+      routeGap: wide ? '0px' : '28px',
+      stopAlign: wide ? 'center' : 'flex-start',
+      stopText: wide ? 'center' : 'left',
+      stopPad: wide ? '0 10px' : '0 0 0 52px',
+      shipPos: wide ? ('top:-18px;left:' + (this.state.shipGo ? 'calc(100% - 34px)' : '0px') + ';') : ('left:1px;top:' + (this.state.shipGo ? 'calc(100% - 34px)' : '0px') + ';'),
+      shipTrans: this._reduce ? 'none' : 'left 3.8s cubic-bezier(.45,.05,.3,1), top 3.8s cubic-bezier(.45,.05,.3,1)',
       tlCols: wide ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
       tlGap: wide ? '28px' : '40px',
       tlStagePad: wide ? '62px 0 0' : '0 0 0 58px',
