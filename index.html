@@ -256,7 +256,7 @@ button:focus-visible{outline:3px solid #C5A059;outline-offset:3px}
   </div>
 </sc-if>
 
-<audio ref="{{ audioRef }}" src="nelson-birthday-invitation/public/audio/amigo.mp3" preload="none" loop=""></audio>
+<audio ref="{{ audioRef }}" src="nelson-birthday-invitation/public/audio/amigo.mp3" preload="auto" autoplay="" loop=""></audio>
 <button data-noprint="" onClick="{{ toggleMusic }}" aria-label="{{ musicLabel }}" style="position:fixed;left:18px;bottom:18px;z-index:40;height:56px;padding:0 20px 0 16px;border-radius:999px;border:1px solid #C5A059;background:#2C4A3E;color:#FAF8F5;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;font-weight:600;letter-spacing:.08em;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);transition:transform .2s ease" style-hover="transform:translateY(-2px)">
   <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#C5A059"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
@@ -305,6 +305,10 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { if (localStorage.getItem(KEY) === '1') this.setState({ confirmed: true }); } catch (e) {}
+    // Autoplay: se intenta al cargar; si el navegador lo bloquea, arranca con el primer toque, scroll o tecla.
+    this.play();
+    this.unlock = () => { if (!this.state.playing) this.play(); ['pointerdown','touchstart','keydown','scroll','wheel'].forEach((ev) => window.removeEventListener(ev, this.unlock)); };
+    ['pointerdown','touchstart','keydown','scroll','wheel'].forEach((ev) => window.addEventListener(ev, this.unlock, { passive: true }));
     this.rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.onKey = (e) => {
       if (this.state.lb < 0) return;
@@ -401,7 +405,7 @@ class Component extends DCLogic {
       confirmed: this.state.confirmed, notConfirmed: !this.state.confirmed, showTop: this.state.showTop,
       audioRef: this.audioRef, playing: !!this.state.playing, paused: !this.state.playing,
       musicText: this.state.playing ? 'Pausar' : 'Música', musicLabel: this.state.playing ? 'Pausar la canción' : 'Reproducir la canción Amigo',
-      toggleMusic: () => (this.state.playing ? this.pause() : this.play()),
+      toggleMusic: (e) => { e && e.stopPropagation(); this.userToggled = true; this.state.playing ? this.pause() : this.play(); },
       discover: () => { if (!this.state.playing) this.play(); const el = this.passRef.current; el && this.scrollTo(el.getBoundingClientRect().top + window.scrollY); },
       toTop: () => this.scrollTo(0),
       confirm: () => { this.setState({ confirmed: true }); try { localStorage.setItem(KEY, '1'); } catch (e) {} this.fire(); },
