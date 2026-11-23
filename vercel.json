@@ -1,0 +1,10 @@
+{
+  "outputDirectory": ".",
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/ICEBALL%20Landing.dc.html"
+    }
+  ]
+}
