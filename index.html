@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"./vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"./vendor/react-dom.production.min.js"};</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Del origen al destino — Exportación de café colombiano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#08111D;color:#F2ECE2;-webkit-font-smoothing:antialiased;}
+a{color:#6FB3DA;text-decoration:none;} a:hover{color:#F2ECE2;}
+button{font:inherit;}
+*:focus-visible{outline:2px solid #6FB3DA;outline-offset:2px;}
+@keyframes hintPulse{0%,100%{opacity:.35}50%{opacity:1}}
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;background:#08111D;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#F2ECE2;">
+
+  <x-import component-from-global-scope="port-scene" from="./port-scene.js" view="{{ view }}" motion="{{ motionAttr }}" inspect="{{ inspectAttr }}" quality="{{ qualityAttr }}" style="position:absolute;inset:0;" hint-size="100%,100%"></x-import>
+
+  <!-- ================= PANTALLA DE INICIO ================= -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,17,29,.94) 0%,rgba(8,17,29,.72) 34%,rgba(8,17,29,0) 66%);"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:42%;pointer-events:none;background:linear-gradient(0deg,rgba(8,17,29,.9) 0%,rgba(8,17,29,0) 100%);"></div>
+
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;pointer-events:none;overflow:hidden;">
+    <header style="flex:none;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:clamp(14px,3vh,28px) clamp(24px,4vw,64px) 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#B9C2CC;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="width:8px;height:8px;background:#C89B6D;transform:rotate(45deg);"></span>
+        <span>Comercio Internacional · Simulador logístico</span>
+      </div>
+      <span>Escena A · Puerto de Cartagena · Representación ilustrativa</span>
+    </header>
+
+    <div style="flex:1;min-height:0;display:flex;align-items:center;padding:clamp(10px,2.5vh,32px) clamp(24px,4vw,64px);">
+    <main style="max-width:720px;display:flex;flex-direction:column;gap:clamp(10px,2.6vh,28px);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.16em;color:#6FB3DA;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <span>CARTAGENA, COLOMBIA</span>
+        <span style="width:44px;height:1px;background:#6FB3DA;"></span>
+        <span>MIAMI, ESTADOS UNIDOS</span>
+      </div>
+      <h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:800;font-stretch:118%;font-size:clamp(40px,min(7.4vw,12vh),136px);line-height:.9;letter-spacing:-.015em;text-wrap:balance;">DEL ORIGEN<br>AL DESTINO</h1>
+      <p style="margin:0;font-family:'Archivo',sans-serif;font-weight:500;font-stretch:100%;font-size:clamp(18px,min(1.7vw,3vh),28px);line-height:1.3;color:#F2ECE2;max-width:600px;text-wrap:pretty;">El recorrido del café colombiano hacia el mercado estadounidense.</p>
+      <p style="margin:0;font-size:clamp(15px,min(1.1vw,2.2vh),19px);line-height:1.5;color:#B9C2CC;max-width:520px;text-wrap:pretty;">Explora las etapas logísticas, aduaneras y sanitarias que intervienen en una operación internacional de exportación de café.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(0px,.6vh,6px);pointer-events:auto;">
+        <button onClick="{{ start }}" style="display:flex;align-items:center;gap:14px;height:clamp(46px,7vh,58px);padding:0 28px;border:0;border-radius:10px;background:#F2ECE2;color:#08111D;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:16px;letter-spacing:.1em;cursor:pointer;white-space:nowrap;transition:transform .15s ease,background .15s ease;" style-hover="background:#FFFFFF;" style-active="transform:scale(.97);">
+          COMENZAR RECORRIDO
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11M10 4l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>
+        </button>
+        <button onClick="{{ toggleRoute }}" style="height:clamp(46px,7vh,58px);padding:0 26px;border:1px solid rgba(242,236,226,.38);border-radius:10px;background:rgba(8,17,29,.35);color:#F2ECE2;font-family:'Archivo',sans-serif;font-weight:600;font-stretch:110%;font-size:16px;letter-spacing:.1em;cursor:pointer;white-space:nowrap;transition:background .15s ease,transform .15s ease;" style-hover="background:rgba(242,236,226,.1);" style-active="transform:scale(.97);">EXPLORAR LA RUTA</button>
+      </div>
+    </main>
+    </div>
+
+    <footer style="flex:none;padding:0 clamp(24px,4vw,64px) clamp(14px,3vh,28px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#B9C2CC;text-transform:uppercase;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#F2ECE2;animation:hintPulse 2.4s ease-in-out infinite;"></span>
+        Pulsa Enter para comenzar · Arrastra para mirar el puerto
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;width:min(560px,100%);">
+        <sc-for list="{{ stageStrip }}" as="s" hint-placeholder-count="8">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="height:2px;background:rgba(242,236,226,.28);"></div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#8C98A5;">{{ s.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </footer>
+    </div>
+
+    <sc-if value="{{ routeOpen }}" hint-placeholder-val="{{ false }}">
+      <aside style="position:absolute;top:84px;right:clamp(16px,3vw,48px);bottom:84px;width:min(440px,calc(100% - 32px));display:flex;flex-direction:column;background:rgba(9,19,32,.9);backdrop-filter:blur(14px);border:1px solid rgba(242,236,226,.12);border-radius:14px;overflow:hidden;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 24px 18px;border-bottom:1px solid rgba(242,236,226,.1);">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#6FB3DA;">LA RUTA · 8 ETAPAS · 3 ESCENAS</span>
+            <span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:24px;">Una sola operación, de origen a destino</span>
+          </div>
+          <button onClick="{{ toggleRoute }}" aria-label="Cerrar" style="flex:none;width:40px;height:40px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;font-size:18px;" style-hover="background:rgba(242,236,226,.08);">×</button>
+        </div>
+        <div style="flex:1;overflow:auto;padding:8px 12px 16px;display:flex;flex-direction:column;">
+          <sc-for list="{{ routeGroups }}" as="g" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;padding:14px 12px 6px;gap:4px;">
+              <div style="display:flex;align-items:baseline;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:#C89B6D;">
+                <span>ESCENA {{ g.id }}</span><span style="color:#8C98A5;">{{ g.name }}</span>
+              </div>
+              <sc-for list="{{ g.stages }}" as="s" hint-placeholder-count="2">
+                <button onClick="{{ s.go }}" style="display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:12px;padding:12px 10px;margin:0 -10px;border:0;border-radius:8px;background:transparent;color:#F2ECE2;text-align:left;cursor:pointer;" style-hover="background:rgba(242,236,226,.07);">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6FB3DA;">{{ s.n }}</span>
+                  <span style="display:flex;flex-direction:column;gap:2px;">
+                    <span style="font-size:16px;font-weight:500;line-height:1.3;">{{ s.title }}</span>
+                    <span style="font-size:13px;color:#8C98A5;">{{ s.location }}</span>
+                  </span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:{{ s.statusColor }};">{{ s.status }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </aside>
+    </sc-if>
+  </sc-if>
+
+  <!-- ================= INTERFAZ DEL RECORRIDO ================= -->
+  <sc-if value="{{ isTour }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:0;left:0;bottom:0;width:560px;max-width:100%;pointer-events:none;background:linear-gradient(90deg,rgba(8,17,29,.55),rgba(8,17,29,0));"></div>
+
+    <header style="position:absolute;top:0;left:0;right:0;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:linear-gradient(180deg,rgba(8,17,29,.85),rgba(8,17,29,0));">
+      <button onClick="{{ goHome }}" style="flex:none;white-space:nowrap;display:flex;align-items:center;gap:12px;border:0;background:transparent;color:#F2ECE2;cursor:pointer;padding:6px 0;">
+        <span style="width:8px;height:8px;background:#C89B6D;transform:rotate(45deg);"></span>
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-stretch:118%;font-size:15px;letter-spacing:.06em;">DEL ORIGEN AL DESTINO</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:#6FB3DA;">CTG → MIA</span>
+      </button>
+      <div style="flex:1;min-width:0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#B9C2CC;text-transform:uppercase;">Escena {{ stage.scene }} · {{ stage.sceneName }}</div>
+      <nav style="flex:none;display:flex;gap:8px;">
+        <button onClick="{{ openDocs }}" style="display:flex;align-items:center;gap:10px;height:40px;padding:0 14px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:{{ docsBtnBg }};color:#F2ECE2;cursor:pointer;font-size:14px;font-weight:500;" style-hover="border-color:rgba(242,236,226,.4);">
+          Expediente <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C89B6D;">{{ docCount }}</span>
+        </button>
+        <button onClick="{{ toggleMap }}" style="height:40px;padding:0 14px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:{{ mapBtnBg }};color:#F2ECE2;cursor:pointer;font-size:14px;font-weight:500;" style-hover="border-color:rgba(242,236,226,.4);">Ruta</button>
+        <button onClick="{{ openHelp }}" style="height:40px;padding:0 14px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:{{ helpBtnBg }};color:#F2ECE2;cursor:pointer;font-size:14px;font-weight:500;" style-hover="border-color:rgba(242,236,226,.4);">Ayuda</button>
+        <button onClick="{{ goHome }}" style="height:40px;padding:0 14px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;font-size:14px;font-weight:500;" style-hover="border-color:rgba(242,236,226,.4);">Inicio</button>
+      </nav>
+    </header>
+
+    <!-- Panel informativo -->
+    <section data-screen-label="Etapa {{ stage.n }}" style="position:absolute;top:84px;left:24px;width:min(520px,calc(100% - 48px));max-height:calc(100% - 216px);overflow-y:auto;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;padding:24px 28px 26px;background:rgba(9,19,32,.84);backdrop-filter:blur(14px);border:1px solid rgba(242,236,226,.12);border-radius:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.14em;">
+        <span style="flex:none;white-space:nowrap;color:#C89B6D;">ETAPA {{ stage.n }}</span>
+        <span style="display:flex;align-items:center;justify-content:flex-end;text-align:right;gap:8px;color:#6FB3DA;"><span style="width:6px;height:6px;border-radius:50%;background:#6FB3DA;"></span>{{ stage.location }}</span>
+      </div>
+      <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:clamp(28px,2.4vw,42px);line-height:1.08;text-wrap:balance;">{{ stage.title }}</h2>
+      <sc-if value="{{ showInspect }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:4px;">
+          <button onClick="{{ toggleInspect }}" style="height:40px;padding:0 16px;border-radius:8px;border:1px solid #E3B25A;background:{{ inspectBg }};color:{{ inspectFg }};cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;white-space:nowrap;" style-active="transform:scale(.97);">{{ inspectLabel }}</button>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#E3B25A;">EVENTUAL · NO OCURRE EN TODOS LOS ENVÍOS</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ showFda }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(242,236,226,.1);padding-top:12px;margin-top:2px;">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;">
+          <sc-for list="{{ fdaChecks }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid rgba(242,236,226,.1);min-width:0;">
+              <span style="font-size:14px;line-height:1.3;color:#F2ECE2;">{{ c.name }}</span>
+              <span style="align-self:flex-start;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:3px 7px;border-radius:4px;border:1px solid {{ c.color }};color:{{ c.color }};">{{ c.tag }}</span>
+            </div>
+          </sc-for>
+          </div>
+          <span style="font-size:13px;color:#8C98A5;">FDA y CBP tienen competencias distintas y pueden coordinarse.</span>
+        </div>
+      </sc-if>
+    </section>
+
+    <!-- Mapa de la ruta -->
+    <sc-if value="{{ mapVisible }}" hint-placeholder-val="{{ false }}">
+    <section style="position:absolute;right:24px;bottom:132px;width:min(330px,calc(100% - 48px));background:rgba(9,19,32,.84);backdrop-filter:blur(14px);border:1px solid rgba(242,236,226,.12);border-radius:14px;overflow:hidden;">
+      <button onClick="{{ toggleMap }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:0;background:transparent;color:#F2ECE2;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;">
+        <span>RUTA INTERNACIONAL</span><span style="color:#8C98A5;">CERRAR ×</span>
+      </button>
+        <div style="padding:0 16px 14px;display:flex;flex-direction:column;gap:10px;">
+          <svg viewBox="0 0 300 180" style="width:100%;height:auto;display:block;">
+            <text x="150" y="104" text-anchor="middle" fill="#6FB3DA" opacity=".55" font-family="IBM Plex Sans" font-style="italic" font-size="11" letter-spacing="2">MAR CARIBE</text>
+            <path d="M232 138 Q110 138 64 42" fill="none" stroke="rgba(242,236,226,.28)" stroke-width="1.5" stroke-dasharray="3 5"></path>
+            <path d="M232 138 Q110 138 64 42" fill="none" stroke="#6FB3DA" stroke-width="2.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="{{ mapOffset }}" style="transition:stroke-dashoffset 2.4s cubic-bezier(.65,0,.35,1);"></path>
+            <circle cx="232" cy="138" r="5" fill="#C89B6D"></circle>
+            <circle cx="64" cy="42" r="5" fill="#F2ECE2"></circle>
+            <circle cx="{{ markerX }}" cy="{{ markerY }}" r="11" fill="none" stroke="#F2ECE2" stroke-width="1.5" style="transition:cx 2.4s cubic-bezier(.65,0,.35,1),cy 2.4s cubic-bezier(.65,0,.35,1);"></circle>
+            <text x="232" y="160" text-anchor="middle" fill="#F2ECE2" font-family="IBM Plex Mono" font-size="11" letter-spacing="1">CARTAGENA</text>
+            <text x="232" y="173" text-anchor="middle" fill="#8C98A5" font-family="IBM Plex Mono" font-size="9" letter-spacing="1">COLOMBIA</text>
+            <text x="82" y="28" fill="#F2ECE2" font-family="IBM Plex Mono" font-size="11" letter-spacing="1">MIAMI</text>
+            <text x="82" y="40" fill="#8C98A5" font-family="IBM Plex Mono" font-size="9" letter-spacing="1">FLORIDA, EE. UU.</text>
+          </svg>
+          <div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#8C98A5;">
+            <span>{{ mapPhase }}</span><span>Trazado ilustrativo</span>
+          </div>
+        </div>
+    </section>
+    </sc-if>
+
+    <!-- Navegación y progreso -->
+    <section style="position:absolute;left:24px;right:24px;bottom:20px;display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:24px;padding:14px 18px;background:rgba(9,19,32,.88);backdrop-filter:blur(14px);border:1px solid rgba(242,236,226,.12);border-radius:14px;">
+      <div style="display:flex;gap:8px;">
+        <button onClick="{{ restart }}" aria-label="Reiniciar recorrido" title="Reiniciar recorrido" style="width:44px;height:44px;display:grid;place-items:center;border-radius:10px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;" style-hover="background:rgba(242,236,226,.08);">
+          <svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="3" width="2" height="10" fill="currentColor"></rect><path d="M14 3v10L6 8z" fill="currentColor"></path></svg>
+        </button>
+        <button onClick="{{ prev }}" disabled="{{ atStart }}" aria-label="Etapa anterior" title="Etapa anterior (←)" style="width:44px;height:44px;display:grid;place-items:center;border-radius:10px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;opacity:{{ prevOpacity }};" style-hover="background:rgba(242,236,226,.08);">
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>
+        </button>
+        <button onClick="{{ togglePlay }}" aria-label="{{ playLabel }}" title="{{ playLabel }} (espacio)" style="height:44px;padding:0 18px;display:flex;align-items:center;gap:10px;border-radius:10px;border:0;background:#F2ECE2;color:#08111D;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;font-weight:500;min-width:132px;justify-content:center;" style-active="transform:scale(.97);">
+          <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="1" width="3.5" height="12" fill="currentColor"></rect><rect x="8.5" y="1" width="3.5" height="12" fill="currentColor"></rect></svg></sc-if>
+          <sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 1l10 6-10 6z" fill="currentColor"></path></svg></sc-if>
+          {{ playText }}
+        </button>
+        <button onClick="{{ next }}" disabled="{{ atEnd }}" aria-label="Siguiente etapa" title="Siguiente etapa (→)" style="width:44px;height:44px;display:grid;place-items:center;border-radius:10px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;opacity:{{ nextOpacity }};" style-hover="background:rgba(242,236,226,.08);">
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"></path></svg>
+        </button>
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:6px;font-family:'IBM Plex Mono',monospace;padding:0 6px;">
+        <span style="font-size:30px;font-weight:500;color:#F2ECE2;">{{ stage.n }}</span>
+        <span style="font-size:16px;color:#8C98A5;">/ 08</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;">
+        <sc-for list="{{ segments }}" as="s" hint-placeholder-count="8">
+          <button onClick="{{ s.go }}" title="{{ s.title }}" style="display:flex;flex-direction:column;gap:9px;padding:8px 4px 6px;border:0;border-radius:6px;background:transparent;color:#F2ECE2;cursor:pointer;text-align:left;min-width:0;" style-hover="background:rgba(242,236,226,.06);">
+            <span style="position:relative;display:block;width:100%;height:3px;background:rgba(242,236,226,.16);overflow:hidden;border-radius:2px;">
+              <span style="position:absolute;left:0;top:0;bottom:0;width:{{ s.fill }};background:{{ s.barColor }};"></span>
+            </span>
+            <span style="display:flex;gap:6px;align-items:baseline;min-width:0;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:{{ s.numColor }};">{{ s.n }}</span>
+              <span style="font-size:12px;color:{{ s.labelColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ s.short }}</span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- Cajón: expediente / ayuda -->
+    <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeDrawer }}" style="position:absolute;inset:0;background:rgba(8,17,29,.35);"></div>
+      <aside style="position:absolute;top:0;right:0;bottom:0;width:min(480px,100%);display:flex;flex-direction:column;background:#0C1828;border-left:1px solid rgba(242,236,226,.12);box-shadow:-24px 0 60px rgba(0,0,0,.35);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:26px 28px 20px;border-bottom:1px solid rgba(242,236,226,.1);">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#C89B6D;">{{ drawerKicker }}</span>
+            <span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:26px;">{{ drawerTitle }}</span>
+          </div>
+          <button onClick="{{ closeDrawer }}" aria-label="Cerrar" style="flex:none;width:40px;height:40px;border-radius:8px;border:1px solid rgba(242,236,226,.18);background:transparent;color:#F2ECE2;cursor:pointer;font-size:18px;" style-hover="background:rgba(242,236,226,.08);">×</button>
+        </div>
+
+        <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;overflow:auto;padding:8px 28px 28px;display:flex;flex-direction:column;">
+            <sc-for list="{{ docGroups }}" as="g" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;padding-top:18px;">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;padding-bottom:8px;">{{ g.cat }}</span>
+                <sc-for list="{{ g.docs }}" as="d" hint-placeholder-count="2">
+                  <div style="display:flex;flex-direction:column;border-top:1px solid rgba(242,236,226,.08);background:{{ d.bg }};">
+                    <button onClick="{{ d.toggle }}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border:0;background:transparent;color:#F2ECE2;text-align:left;cursor:pointer;font-size:16px;font-weight:500;">
+                      <span>{{ d.name }}</span>
+                      <span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:4px 8px;border-radius:4px;border:1px solid {{ d.tagColor }};color:{{ d.tagColor }};">{{ d.tag }}</span>
+                    </button>
+                    <sc-if value="{{ d.open }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex;flex-direction:column;gap:12px;padding:0 0 18px;">
+                        <p style="margin:0;font-size:15px;line-height:1.6;color:#E4E0D8;text-wrap:pretty;">{{ d.desc }}</p>
+                        <div style="display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:13px;line-height:1.5;">
+                          <span style="color:#8C98A5;">Interviene</span><span style="color:#E4E0D8;">{{ d.who }}</span>
+                          <span style="color:#8C98A5;">Etapas</span><span style="font-family:'IBM Plex Mono',monospace;color:#6FB3DA;">{{ d.stages }}</span>
+                          <span style="color:#8C98A5;">Fuente</span><span style="color:#E3B25A;">Pendiente de verificación (Fase 7)</span>
+                        </div>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+            <p style="margin:24px 0 0;font-size:13px;line-height:1.55;color:#8C98A5;">Fichas ilustrativas. No reproducen formularios, sellos ni registros oficiales. La exigencia de cada documento depende de las características de la operación.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isHelp }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow:auto;padding:8px 28px 28px;display:flex;flex-direction:column;gap:24px;">
+            <div style="display:flex;flex-direction:column;padding-top:16px;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;padding-bottom:8px;">CÓMO LEER LAS ETIQUETAS</span>
+              <sc-for list="{{ tagLegend }}" as="t" hint-placeholder-count="4">
+                <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding:12px 0;border-top:1px solid rgba(242,236,226,.08);">
+                  <span style="justify-self:start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:4px 8px;border-radius:4px;border:1px solid {{ t.color }};color:{{ t.color }};">{{ t.tag }}</span>
+                  <span style="font-size:14px;line-height:1.5;color:#E4E0D8;">{{ t.desc }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;padding-bottom:8px;">GLOSARIO</span>
+              <sc-for list="{{ glossary }}" as="g" hint-placeholder-count="6">
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid rgba(242,236,226,.08);">
+                  <span style="font-size:15px;font-weight:600;color:#F2ECE2;">{{ g.term }}</span>
+                  <span style="font-size:14px;line-height:1.5;color:#B9C2CC;">{{ g.def }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;padding-bottom:8px;">TECLADO Y ESCENA</span>
+              <sc-for list="{{ shortcuts }}" as="k" hint-placeholder-count="5">
+                <div style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid rgba(242,236,226,.08);font-size:14px;color:#E4E0D8;">
+                  <span>{{ k.label }}</span><span style="font-family:'IBM Plex Mono',monospace;color:#6FB3DA;">{{ k.key }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </aside>
+    </sc-if>
+  </sc-if>
+<sc-if value="{{ isSummary }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Cierre" style="position:absolute;inset:0;overflow-y:auto;background:rgba(8,17,29,.9);backdrop-filter:blur(10px);">
+      <div style="max-width:1320px;margin:0 auto;min-height:100%;box-sizing:border-box;padding:clamp(24px,5vh,56px) clamp(24px,4vw,64px);display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,4vh,40px);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.16em;color:#6FB3DA;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+              <span>RECORRIDO COMPLETO</span><span style="width:32px;height:1px;background:#6FB3DA;"></span><span>CARTAGENA → MIAMI</span>
+            </div>
+            <h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:800;font-stretch:118%;font-size:clamp(40px,min(5vw,8vh),84px);line-height:.92;letter-spacing:-.01em;">DEL ORIGEN<br>AL DESTINO</h1>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button onClick="{{ replay }}" style="height:52px;padding:0 24px;border:0;border-radius:10px;background:#F2ECE2;color:#08111D;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:15px;letter-spacing:.1em;cursor:pointer;white-space:nowrap;" style-hover="background:#FFFFFF;" style-active="transform:scale(.97);">VOLVER A RECORRER</button>
+            <button onClick="{{ goHome }}" style="height:52px;padding:0 24px;border:1px solid rgba(242,236,226,.38);border-radius:10px;background:transparent;color:#F2ECE2;font-family:'Archivo',sans-serif;font-weight:600;font-stretch:110%;font-size:15px;letter-spacing:.1em;cursor:pointer;white-space:nowrap;" style-hover="background:rgba(242,236,226,.1);" style-active="transform:scale(.97);">INICIO</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;">
+          <sc-for list="{{ summaryStages }}" as="s" hint-placeholder-count="8">
+            <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:2px solid #6FB3DA;">
+              <span style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C89B6D;"><span>{{ s.n }}</span><span style="color:#8C98A5;">{{ s.scene }}</span></span>
+              <span style="font-size:16px;font-weight:500;line-height:1.25;color:#F2ECE2;">{{ s.short }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,40px);">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;">ACTORES PRINCIPALES</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Exportador</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Agencia de aduanas</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Terminales portuarias</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Naviera</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Importador</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid rgba(242,236,226,.18);font-size:14px;">Transportador terrestre</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;">DOCUMENTOS CLAVE</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;">Factura comercial</span>
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;">Lista de empaque</span>
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;">SAE</span>
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;">Conocimiento de embarque (B/L)</span>
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;">Declaración de entrada</span>
+              <span style="padding:7px 12px;border-radius:6px;background:rgba(242,236,226,.07);font-size:14px;color:#E3B25A;">Prior Notice · condicional</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#8C98A5;">CONTROLES</span>
+            <div style="display:flex;flex-direction:column;">
+              <div style="display:grid;grid-template-columns:64px 1fr;gap:12px;padding:8px 0;border-top:1px solid rgba(242,236,226,.1);font-size:14px;"><span style="font-family:'IBM Plex Mono',monospace;color:#C89B6D;">DIAN</span><span style="color:#E4E0D8;">Aduana de exportación · Colombia</span></div>
+              <div style="display:grid;grid-template-columns:64px 1fr;gap:12px;padding:8px 0;border-top:1px solid rgba(242,236,226,.1);font-size:14px;"><span style="font-family:'IBM Plex Mono',monospace;color:#6FB3DA;">CBP</span><span style="color:#E4E0D8;">Aduana de entrada · EE. UU.</span></div>
+              <div style="display:grid;grid-template-columns:64px 1fr;gap:12px;padding:8px 0;border-top:1px solid rgba(242,236,226,.1);font-size:14px;"><span style="font-family:'IBM Plex Mono',monospace;color:#6FB3DA;">FDA</span><span style="color:#E4E0D8;">Requisitos alimentarios · EE. UU.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(242,236,226,.1);border:1px solid rgba(242,236,226,.1);border-radius:12px;overflow:hidden;">
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px;background:#0C1828;"><span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:17px;">Exportación</span><span style="font-size:14px;line-height:1.5;color:#B9C2CC;">Salida legal desde Colombia, con autorización de embarque.</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px;background:#0C1828;"><span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:17px;">Transporte internacional</span><span style="font-size:14px;line-height:1.5;color:#B9C2CC;">Traslado marítimo amparado por el conocimiento de embarque.</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px;background:#0C1828;"><span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:17px;">Importación</span><span style="font-size:14px;line-height:1.5;color:#B9C2CC;">Entrada ante CBP y requisitos de la FDA cuando aplican.</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px;background:#0C1828;"><span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:17px;">Liberación</span><span style="font-size:14px;line-height:1.5;color:#B9C2CC;">Retiro autorizado tras cumplir formalidades, tributos y controles.</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px;background:#0C1828;"><span style="font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:17px;">Distribución</span><span style="font-size:14px;line-height:1.5;color:#B9C2CC;">Entrega terrestre en la bodega del importador o distribuidor.</span></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dwellSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:25,&quot;min&quot;:10,&quot;max&quot;:60,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Reproducción&quot;},&quot;ambientMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Escena 3D&quot;},&quot;quality&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Automática&quot;,&quot;Alta&quot;,&quot;Rendimiento&quot;],&quot;default&quot;:&quot;Automática&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Escena 3D&quot;}}">
+const TAGS = {
+  Obligatorio: '#F2ECE2',
+  Condicional: '#E3B25A',
+  Eventual: '#8C98A5',
+  Ilustrativo: '#6FB3DA'
+};
+
+const STAGES = [
+  {
+    n: '01', short: 'Ingreso a puerto', scene: 'A', sceneName: 'Puerto de Cartagena', location: 'Cartagena, Colombia', routeT: 0, ready: true,
+    title: 'Ingreso y revisión en el puerto de Cartagena',
+    body: [
+      'La terminal recibe el contenedor con el café empacado y verifica la información operativa de la carga: identificación del contenedor, datos de la reserva, peso declarado y documentos correspondientes, según los procedimientos aplicables.',
+      'Desde ese momento, la mercancía queda sujeta a los controles portuarios, aduaneros y operativos que correspondan antes de su embarque.'
+    ],
+    actors: [{ name: 'Exportador' }, { name: 'Terminal portuaria' }, { name: 'Naviera' }, { name: 'Operador logístico', cond: 'si interviene' }],
+    docs: [['reserva', 'Obligatorio'], ['instrucciones', 'Obligatorio'], ['carga', 'Obligatorio'], ['empaque', 'Condicional'], ['factura', 'Condicional']],
+    note: 'Los documentos no se presentan necesariamente en una misma ventanilla, y la terminal no realiza por sí misma los controles aduaneros: estos corresponden a la DIAN.'
+  },
+  { n: '02', short: 'Aduana DIAN', scene: 'A', sceneName: 'Puerto de Cartagena', location: 'Cartagena, Colombia', routeT: 0, title: 'Aduana de exportación — Colombia', preview: 'El contenedor pasa a la zona de control. Se distinguen tres momentos: la solicitud de autorización de embarque (SAE), los controles que puede aplicar la DIAN y la autorización efectiva.' },
+  { n: '03', short: 'Embarque y tránsito', scene: 'A → B', sceneName: 'Cartagena · Tránsito marítimo', location: 'Cartagena · Ruta marítima', routeT: 0.5, showMap: true, dwellExtra: 14, title: 'Embarque y transporte marítimo hacia Estados Unidos', preview: 'Una grúa carga el contenedor en el buque, que zarpa hacia el mar abierto. El mapa sigue el tránsito por una ruta esquemática, sin tiempos ni escalas inventados.' },
+  { n: '04', short: 'Llegada a Miami', scene: 'C', sceneName: 'Puerto de Miami', location: 'Miami, Florida, EE. UU.', routeT: 1, dwellExtra: 8, title: 'Llegada al puerto de Miami', preview: 'El buque se aproxima a la terminal y el contenedor se descarga. La llegada física no equivale a la liberación aduanera de la mercancía.' },
+  { n: '05', short: 'Aduana CBP', scene: 'C', sceneName: 'Puerto de Miami', location: 'Miami, Florida, EE. UU.', routeT: 1, dwellExtra: 6, title: 'Aduana de entrada — CBP', preview: 'Panel de declaración de entrada con valor, clasificación y origen. La inspección se muestra como un evento condicional, no como regla.' },
+  { n: '06', short: 'Control FDA', scene: 'C', sceneName: 'Puerto de Miami', location: 'Miami, Florida, EE. UU.', routeT: 1, title: 'Control sanitario y requisitos alimentarios — FDA', preview: 'Requisitos aplicables a alimentos (Prior Notice, registro de instalaciones, etiquetado) y la diferencia entre las competencias de la FDA y las de CBP.' },
+  { n: '07', short: 'Tributos y liberación', scene: 'C', sceneName: 'Puerto de Miami', location: 'Miami, Florida, EE. UU.', routeT: 1, dwellExtra: 4, title: 'Formalidades, tributos y liberación', preview: 'El contenedor permanece en la terminal mientras se completan las comprobaciones. La liberación se muestra solo cuando se cumplen las condiciones, sin cifras inventadas.' },
+  { n: '08', short: 'Entrega terrestre', scene: 'C', sceneName: 'Miami · Distribución', location: 'Terminal → bodega del importador', routeT: 1, dwellExtra: 8, title: 'Transporte terrestre y entrega en Miami', preview: 'Un camión retira el contenedor y lo lleva a la bodega del importador o distribuidor. El recorrido cierra con un resumen de las ocho etapas.' }
+];
+
+const DOCS = {
+  factura: { name: 'Factura comercial', cat: 'COMERCIALES', tag: 'Obligatorio', stages: '01 · 02 · 04 · 05', who: 'Exportador (vendedor); la usan el importador, los agentes y las autoridades.', desc: 'Documento del vendedor que detalla la compraventa: mercancía, cantidades, valor y condiciones de la operación.' },
+  empaque: { name: 'Lista de empaque', cat: 'COMERCIALES', tag: 'Condicional', stages: '01 · 02 · 04', who: 'Exportador.', desc: 'Detalle del contenido, el peso y la forma de empaque de cada bulto del envío.' },
+  reserva: { name: 'Reserva de embarque', cat: 'LOGÍSTICOS Y DE TRANSPORTE', tag: 'Obligatorio', stages: '01', who: 'Exportador o agente de carga, con la naviera.', desc: 'Confirmación del espacio contratado con la naviera para un buque y un servicio determinados.' },
+  instrucciones: { name: 'Instrucciones de embarque', cat: 'LOGÍSTICOS Y DE TRANSPORTE', tag: 'Obligatorio', stages: '01 · 03', who: 'Exportador o agente de carga.', desc: 'Indicaciones a la naviera o al agente sobre el transporte de la carga y los datos para emitir el conocimiento de embarque.' },
+  carga: { name: 'Información de la carga y peso declarado', cat: 'LOGÍSTICOS Y DE TRANSPORTE', tag: 'Obligatorio', stages: '01', who: 'Exportador; la verifican la terminal y la naviera.', desc: 'Datos operativos del contenedor: identificación, precintos, descripción de la carga y peso.' },
+  bl: { name: 'Conocimiento de embarque (B/L)', cat: 'LOGÍSTICOS Y DE TRANSPORTE', tag: 'Obligatorio', stages: '03 · 04 · 05', who: 'Naviera (emisor); exportador e importador.', desc: 'Documento del transporte marítimo que acredita la recepción de la carga y las condiciones del transporte.' },
+  sae: { name: 'Solicitud de Autorización de Embarque (SAE)', cat: 'ADUANEROS', tag: 'Obligatorio', stages: '02', who: 'Exportador o agencia de aduanas, ante la DIAN.', desc: 'Solicitud que inicia el trámite de salida en Colombia. Es distinta de los controles y de la autorización efectiva de embarque.' },
+  entrada: { name: 'Declaración de entrada a EE. UU.', cat: 'ADUANEROS', tag: 'Obligatorio', stages: '05 · 07', who: 'Importador registrado o agente de aduanas, ante CBP.', desc: 'Información presentada ante CBP para solicitar la entrada de la mercancía: descripción, valor, clasificación y origen.' },
+  soportes: { name: 'Soportes de clasificación, origen y valoración', cat: 'ADUANEROS', tag: 'Condicional', stages: '05 · 07', who: 'Importador y agente de aduanas.', desc: 'Documentación que respalda la clasificación arancelaria, el origen y el valor declarado, cuando se requiere.' },
+  prior: { name: 'Prior Notice (notificación previa)', cat: 'SANITARIOS', tag: 'Condicional', stages: '06', who: 'Importador, agente u otra parte autorizada, ante la FDA.', desc: 'Notificación previa a la FDA sobre alimentos que se importan a Estados Unidos, cuando corresponde.' },
+  registro: { name: 'Registro de instalaciones ante la FDA', cat: 'SANITARIOS', tag: 'Condicional', stages: '06', who: 'Instalación fabricante, procesadora o empacadora.', desc: 'Registro de las instalaciones sujetas a esta obligación. No equivale a una aprobación del producto.' },
+  terrestre: { name: 'Documentos de transporte y recepción', cat: 'ENTREGA', tag: 'Condicional', stages: '08', who: 'Transportador terrestre, importador y bodega.', desc: 'Orden de transporte, información de entrega y registro de recepción de la carga en destino.' }
+};
+
+const GLOSSARY = [
+  { term: 'DIAN', def: 'Dirección de Impuestos y Aduanas Nacionales de Colombia. Autoridad aduanera en la exportación.' },
+  { term: 'SAE', def: 'Solicitud de Autorización de Embarque. Trámite ante la DIAN para la salida de la mercancía.' },
+  { term: 'B/L (Bill of Lading)', def: 'Conocimiento de embarque: el documento del transporte marítimo.' },
+  { term: 'Naviera', def: 'Empresa que presta el servicio de transporte marítimo de la carga.' },
+  { term: 'CBP', def: 'U.S. Customs and Border Protection. Autoridad aduanera de entrada en Estados Unidos.' },
+  { term: 'FDA', def: 'U.S. Food and Drug Administration. Regula los requisitos aplicables a los alimentos. Sus competencias son distintas de las de CBP.' },
+  { term: 'Prior Notice', def: 'Notificación previa a la FDA sobre alimentos importados, cuando corresponde.' },
+  { term: 'Agencia de aduanas', def: 'Intermediario que gestiona los trámites aduaneros por cuenta del exportador o importador, cuando interviene.' }
+];
+
+const TAG_LEGEND = [
+  { tag: 'OBLIGATORIO', color: TAGS.Obligatorio, desc: 'Se exige en la operación descrita.' },
+  { tag: 'CONDICIONAL', color: TAGS.Condicional, desc: 'Depende de las características del producto o de la operación.' },
+  { tag: 'EVENTUAL', color: TAGS.Eventual, desc: 'Puede ocurrir, pero no en todos los envíos (por ejemplo, una inspección física).' },
+  { tag: 'ILUSTRATIVO', color: TAGS.Ilustrativo, desc: 'Representación visual. No es un registro ni una consulta real a las autoridades.' }
+];
+
+const SHORTCUTS = [
+  { label: 'Etapa anterior / siguiente', key: '← →' },
+  { label: 'Reproducir / pausar', key: 'Espacio' },
+  { label: 'Cerrar panel', key: 'Esc' },
+  { label: 'Girar la vista del puerto', key: 'Arrastrar' },
+  { label: 'Acercar / alejar · restablecer', key: 'Rueda · doble clic' }
+];
+
+class Component extends DCLogic {
+  state = { inspect: false, screen: 'home', stage: 0, playing: false, elapsed: 0, drawer: null, mapOverride: null, routeOpen: false, openDoc: null };
+
+  dwell(i = this.state.stage) { return (Math.max(5, this.props.dwellSeconds ?? 25) + (STAGES[i].dwellExtra || 0)) * 1000; }
+
+  componentDidMount() {
+    this._key = e => this.onKey(e);
+    window.addEventListener('keydown', this._key);
+    this._iv = setInterval(() => this.tick(), 100);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._key); clearInterval(this._iv); }
+
+  tick() {
+    const s = this.state;
+    if (s.screen !== 'tour') return;
+    if (!s.playing || s.drawer) { if (s.stage === 2) this.forceUpdate(); return; }
+    const el = s.elapsed + 100, D = this.dwell();
+    if (el < D) return this.setState({ elapsed: el });
+    if (s.stage < STAGES.length - 1) this.setState({ stage: s.stage + 1, elapsed: 0, mapOverride: null, inspect: false });
+    else this.setState({ playing: false, elapsed: 0, screen: 'summary' });
+  }
+
+  onKey(e) {
+    const s = this.state;
+    if (e.key === 'Escape') { if (s.drawer) this.setState({ drawer: null }); else if (s.routeOpen) this.setState({ routeOpen: false }); return; }
+    if (s.screen === 'summary') return;
+    if (s.screen === 'home') { if (e.key === 'Enter' && document.activeElement === document.body) this.start(); return; }
+    if (e.key === 'ArrowRight') this.go(s.stage + 1);
+    else if (e.key === 'ArrowLeft') this.go(s.stage - 1);
+    else if (e.key === ' ' && (document.activeElement === document.body || !document.activeElement)) { e.preventDefault(); this.togglePlay(); }
+  }
+
+  start(i = 0) { this.setState({ screen: 'tour', stage: i, elapsed: 0, playing: false, routeOpen: false, drawer: null }); }
+  go(i) { if (i >= STAGES.length) return this.setState({ screen: 'summary', playing: false, drawer: null }); if (i < 0) return; this.setState({ stage: i, elapsed: 0, playing: false, mapOverride: null, inspect: false }); }
+  togglePlay() {
+    const s = this.state;
+    if (s.playing) return this.setState({ playing: false });
+    if (s.stage === STAGES.length - 1 && s.elapsed >= this.dwell()) return this.setState({ stage: 0, elapsed: 0, playing: true });
+    this.setState({ playing: true });
+  }
+  openDoc(id) { this.setState({ drawer: 'docs', openDoc: id, playing: false }); }
+
+  renderVals() {
+    const s = this.state, st = STAGES[s.stage], D = this.dwell();
+    const key = s.screen + s.stage;
+    if (this._key2 !== key) { this._key2 = key; this._enteredAt = Date.now(); }
+    const reduceM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sec = reduceM ? 99 : (Date.now() - this._enteredAt) / 1000;
+    const atSea = s.stage === 2 && sec >= 9.6;
+    const t = s.stage === 2 ? Math.min(1, Math.max(0, (sec - 9.6) / 18)) * 0.9 : st.routeT, P0 = [232, 138], C = [110, 138], P2 = [64, 42];
+    const bz = k => (1 - t) * (1 - t) * P0[k] + 2 * (1 - t) * t * C[k] + t * t * P2[k];
+    const stage = Object.assign({ body: [], actors: [], note: '', preview: '' }, st, {
+      pending: !st.ready, ready: !!st.ready,
+      scene: s.stage === 2 ? (atSea ? 'B' : 'A') : st.scene,
+      sceneName: s.stage === 2 ? (atSea ? 'Tránsito marítimo' : 'Embarque · Puerto de Cartagena') : st.sceneName,
+      location: s.stage === 2 ? (atSea ? 'Mar Caribe · ruta ilustrativa' : 'Cartagena, Colombia') : st.location,
+      actors: (st.actors || []).map(a => ({ name: a.name, cond: a.cond || '' }))
+    });
+    const segments = STAGES.map((x, i) => {
+      const done = i < s.stage, cur = i === s.stage;
+      const fill = done ? '100%' : cur ? (s.playing || s.elapsed > 0 ? Math.round((s.elapsed / this.dwell(i)) * 100) + '%' : '18%') : '0%';
+      return {
+        n: x.n, short: x.short, title: x.n + ' · ' + x.title, fill,
+        barColor: done ? '#6FB3DA' : '#F2ECE2',
+        numColor: cur ? '#C89B6D' : done ? '#6FB3DA' : '#8C98A5',
+        labelColor: cur ? '#F2ECE2' : '#8C98A5',
+        go: () => this.go(i)
+      };
+    });
+    const groupsDef = [['A', 'Puerto de Cartagena', [0, 1, 2]], ['B', 'Tránsito marítimo', [2]], ['C', 'Puerto de Miami y distribución', [3, 4, 5, 6, 7]]];
+    const routeGroups = groupsDef.map(([id, name, idx]) => ({
+      id, name,
+      stages: idx.map(i => ({ n: STAGES[i].n, title: STAGES[i].title, location: STAGES[i].location, status: i < 8 ? 'ESCENA LISTA' : 'FASE 4', statusColor: i < 8 ? '#74C79C' : '#8C98A5', go: () => this.start(i) }))
+    }));
+    const cats = ['COMERCIALES', 'LOGÍSTICOS Y DE TRANSPORTE', 'ADUANEROS', 'SANITARIOS', 'ENTREGA'];
+    const docGroups = cats.map(cat => ({
+      cat,
+      docs: Object.keys(DOCS).filter(k => DOCS[k].cat === cat).map(k => {
+        const d = DOCS[k], open = s.openDoc === k;
+        return Object.assign({}, d, { tag: d.tag.toUpperCase(), tagColor: TAGS[d.tag], open, bg: open ? 'rgba(242,236,226,.03)' : 'transparent', toggle: () => this.setState({ openDoc: open ? null : k }) });
+      })
+    }));
+    const stageDocs = (st.docs || []).map(([id, tag]) => ({ name: DOCS[id].name, tag: tag.toUpperCase(), tagColor: TAGS[tag], open: () => this.openDoc(id) }));
+    const isHome = s.screen === 'home';
+    const mapVisible = s.mapOverride ?? !!st.showMap;
+    return {
+      isHome, isTour: s.screen === 'tour', isSummary: s.screen === 'summary', routeOpen: s.routeOpen,
+      summaryStages: STAGES.map(x => ({ n: x.n, short: x.short, scene: x.scene })),
+      replay: () => this.start(0),
+      showInspect: false,
+      qualityAttr: ({ 'Alta': 'high', 'Rendimiento': 'low' })[this.props.quality] || 'auto',
+      showFda: false,
+      fdaChecks: [
+        { name: 'Prior Notice', tag: 'CONDICIONAL', color: '#E3B25A' },
+        { name: 'Registro de instalaciones', tag: 'CONDICIONAL', color: '#E3B25A' },
+        { name: 'Etiquetado aplicable', tag: 'SEGÚN PRODUCTO', color: '#E3B25A' },
+        { name: 'Revisión o retención', tag: 'EVENTUAL', color: '#8C98A5' }
+      ],
+      inspectAttr: !isHome && (s.stage === 4 || s.stage === 5) && s.inspect ? 'on' : 'off',
+      inspectLabel: s.stage === 5 ? (s.inspect ? 'QUITAR REVISIÓN' : 'SIMULAR TOMA DE MUESTRA') : (s.inspect ? 'QUITAR INSPECCIÓN' : 'SIMULAR INSPECCIÓN'),
+      inspectBg: s.inspect ? '#E3B25A' : 'transparent', inspectFg: s.inspect ? '#08111D' : '#E3B25A',
+      toggleInspect: () => this.setState({ inspect: !s.inspect }),
+      view: isHome ? (s.routeOpen ? 'route' : 'home') : 's' + (s.stage + 1),
+      motionAttr: this.props.ambientMotion === false ? 'off' : 'on',
+      start: () => this.start(0),
+      toggleRoute: () => this.setState({ routeOpen: !s.routeOpen }),
+      goHome: () => this.setState({ screen: 'home', playing: false, drawer: null, routeOpen: false }),
+      stageStrip: STAGES.map(x => ({ n: x.n })),
+      routeGroups,
+      stage, stageDocs, segments,
+      atStart: s.stage === 0, atEnd: false,
+      prevOpacity: s.stage === 0 ? 0.35 : 1, nextOpacity: 1,
+      prev: () => this.go(s.stage - 1), next: () => this.go(s.stage + 1),
+      restart: () => this.setState({ stage: 0, elapsed: 0, playing: false, mapOverride: null }),
+      togglePlay: () => this.togglePlay(),
+      playing: s.playing, notPlaying: !s.playing,
+      playText: s.playing ? 'PAUSAR' : s.elapsed > 0 ? 'REANUDAR' : 'AUTOMÁTICO',
+      playLabel: s.playing ? 'Pausar' : s.elapsed > 0 ? 'Reanudar' : 'Reproducción automática',
+      mapVisible, mapBtnBg: mapVisible ? 'rgba(242,236,226,.12)' : 'transparent',
+      toggleMap: () => this.setState({ mapOverride: !mapVisible }),
+      mapOffset: String(100 - t * 100), markerX: bz(0).toFixed(1), markerY: bz(1).toFixed(1),
+      mapPhase: s.stage === 2 ? (atSea ? 'Fase: tránsito marítimo' : 'Fase: embarque en Cartagena') : t === 0 ? 'Fase: origen' : 'Fase: destino',
+      docCount: String(Object.keys(DOCS).length),
+      drawerOpen: !!s.drawer, isDocs: s.drawer === 'docs', isHelp: s.drawer === 'help',
+      drawerKicker: s.drawer === 'help' ? 'AYUDA CONTEXTUAL' : 'EXPEDIENTE DOCUMENTAL',
+      drawerTitle: s.drawer === 'help' ? 'Términos y uso' : 'Documentos del proceso',
+      docsBtnBg: s.drawer === 'docs' ? 'rgba(242,236,226,.12)' : 'transparent',
+      helpBtnBg: s.drawer === 'help' ? 'rgba(242,236,226,.12)' : 'transparent',
+      openDocs: () => this.setState({ drawer: s.drawer === 'docs' ? null : 'docs', playing: false }),
+      openHelp: () => this.setState({ drawer: s.drawer === 'help' ? null : 'help', playing: false }),
+      closeDrawer: () => this.setState({ drawer: null }),
+      docGroups, glossary: GLOSSARY, tagLegend: TAG_LEGEND, shortcuts: SHORTCUTS
+    };
+  }
+}
+</script>
+</body>
+</html>

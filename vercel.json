@@ -1,10 +1,14 @@
 {
-  "outputDirectory": ".",
-  "cleanUrls": false,
-  "rewrites": [
+  "cleanUrls": true,
+  "headers": [
     {
-      "source": "/",
-      "destination": "/ICEBALL%20Landing.dc.html"
+      "source": "/(.*)\\.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ]
 }
